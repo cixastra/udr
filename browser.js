@@ -6,12 +6,12 @@ function resolveIpfsHash(domain) {
     resolution
         .ipfsHash(domain)
         .then((hash) =>
-            window.open(`https://cloudflare-ipfs.com/ipfs/${hash}`,"_blank"),
+            window.open(`https://cloudflare-ipfs.com/ipfs/${hash}`, "_self"),
         )
         .catch(console.error);
 }
 
-resolveIpfsHash(document.location.pathname.trim(1, document.location.pathname.length));
+resolveIpfsHash(window.prompt("Enter the NFT Domain:", "cixastra.nft"));
 },{"@unstoppabledomains/resolution":63}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
