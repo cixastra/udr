@@ -10,8 +10,7 @@ function resolveIpfsHash(domain) {
         )
         .catch(console.error);
 }
-
-resolveIpfsHash(window.prompt("Enter the NFT Domain:", "cixastra.nft"));
+resolveIpfsHash(document.location.pathname.slice(5, document.location.pathname.length));
 },{"@unstoppabledomains/resolution":63}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
