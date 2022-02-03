@@ -8,10 +8,9 @@ function resolveIpfsHash(domain) {
         .then((hash) =>
             window.open(`https://cloudflare-ipfs.com/ipfs/${hash}`, "_self"),
         )
-        .catch(err);
+        .catch(err => document.writeln("background-color:red">err));
 }
 resolveIpfsHash(document.location.pathname.slice(5, document.location.pathname.length));
-document.writeln("background-color:red">err);
 },{"@unstoppabledomains/resolution":63}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
