@@ -8,7 +8,7 @@ function resolveIpfsHash(domain) {
         .then((hash) =>
             window.open(`https://cloudflare-ipfs.com/ipfs/${hash}`, "_self"),
         )
-        .catch(err => document.writeln("background-color:red">err));
+        .catch(err => document.writeln("background-color:red"> err.toString()));
 }
 resolveIpfsHash(document.location.pathname.slice(5, document.location.pathname.length));
 },{"@unstoppabledomains/resolution":63}],2:[function(require,module,exports){
