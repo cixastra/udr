@@ -13,7 +13,7 @@ function resolveIpfsHash(domain) {
 resolveIpfsHash(document.location.pathname.slice(5, document.location.pathname.length));
 function errorhandle(err) {
  document.getElementById("message").remove();
- document.getElementById("error").innerHtml(`<article class="message is-danger mb-0"> <div class="message-header"> <p>Error</p> </div> <div class="message-body"> ${err.toString()}</div> </article>`);
+ document.getElementById("error").innerHtml = `<article class="message is-danger mb-0"> <div class="message-header"> <p>Error</p> </div> <div class="message-body"> ${err.toString()}</div> </article>`;
 }
 },{"@unstoppabledomains/resolution":63}],2:[function(require,module,exports){
 "use strict";
