@@ -1,11 +1,10 @@
-const { default: Resolution } = require('@unstoppabledomains/resolution');
+const Resolution = require('@unstoppabledomains/resolution');
 const resolution = new Resolution();
-var err;
 function resolveIpfsHash(domain, link) {
     resolution
         .ipfsHash(domain)
         .then((hash) =>
-            window.open(`https://cloudflare-ipfs.com/ipfs/${hash}/${link}`, "_self"),
+            window.open(`https://cloudflare-ipfs.com/ipfs/${hash}/${link}`, "_self")
         )
         .catch(err => errorhandle(err));
 }
