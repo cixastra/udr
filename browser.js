@@ -8,7 +8,7 @@ function resolveIpfsHash(domain) {
         .then((hash) =>
             window.open(`https://cloudflare-ipfs.com/ipfs/${hash}`, "_self"),
         )
-        .catch(err => document.write(`<article class="message is-danger mb-0"> <div class="message-header"> <p>Error</p> </div> <div class="message-body"> ${err.toString()}</div> </article>`));
+        .catch(err => document.getElementById("error").innerHtml(`<article class="message is-danger mb-0"> <div class="message-header"> <p>Error</p> </div> <div class="message-body"> ${err.toString()}</div> </article>`));
 }
 resolveIpfsHash(document.location.pathname.slice(5, document.location.pathname.length));
 },{"@unstoppabledomains/resolution":63}],2:[function(require,module,exports){
