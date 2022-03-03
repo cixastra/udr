@@ -1,5 +1,6 @@
 const Resolution = require('@unstoppabledomains/resolution');
 const resolution = new Resolution();
+var locations = document.location.pathname.split("/")
 function resolveIpfsHash(domain, link) {
     resolution
         .ipfsHash(domain)
@@ -8,7 +9,7 @@ function resolveIpfsHash(domain, link) {
         )
         .catch(err => errorhandle(err));
 }
-resolveIpfsHash(document.location.pathname.slice(5, document.location.pathname.indexOf("/", 0)), document.location.pathname.slice(document.location.pathname.indexOf("/", 0), document.location.pathname.length));
+resolveIpfsHash(locations[2],locations[3]?.toString());
 function errorhandle(err) {
     document.getElementById("message").remove();
     var perror = document.createTextNode("Error");

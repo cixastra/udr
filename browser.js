@@ -1,16 +1,16 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const { default: Resolution } = require('@unstoppabledomains/resolution');
+const Resolution = require('@unstoppabledomains/resolution');
 const resolution = new Resolution();
-var err;
+var locations = document.location.pathname.split("/")
 function resolveIpfsHash(domain, link) {
     resolution
         .ipfsHash(domain)
         .then((hash) =>
-            window.open(`https://cloudflare-ipfs.com/ipfs/${hash}/${link}`, "_self"),
+            window.open(`https://cloudflare-ipfs.com/ipfs/${hash}/${link}`, "_self")
         )
         .catch(err => errorhandle(err));
 }
-resolveIpfsHash(document.location.pathname.slice(5, document.location.pathname.indexOf("/", 0)), document.location.pathname.slice(document.location.pathname.indexOf("/", 0), document.location.pathname.length));
+resolveIpfsHash(locations[2],locations[3]?.toString());
 function errorhandle(err) {
     document.getElementById("message").remove();
     var perror = document.createTextNode("Error");
@@ -25,6 +25,7 @@ function errorhandle(err) {
     error.appendChild(divheader);
     error.appendChild(divbody);
 }
+
 },{"@unstoppabledomains/resolution":63}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
